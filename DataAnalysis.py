@@ -99,8 +99,8 @@ def plot_roc_curves(models_probs, true_y):
     plt.legend(loc='lower right')
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
     plt.savefig('ROC_Comparison.png')
+    plt.show()
 
     return auc_scores
 # Balancing the dataset (Oversampling)
@@ -155,8 +155,8 @@ sns.heatmap(confusion_matrix, annot = True, fmt = 'd', xticklabels = model_rf.cl
 plt.xlabel('Predicted Labels')
 plt.ylabel('True Labels')
 plt.title('Confusion Matrix for RF')
-plt.show()
 plt.savefig('confusion_matrix.png')
+plt.show()
 
 # Extract values
 tn, fp, fn, tp = confusion_matrix.ravel()
@@ -194,3 +194,10 @@ scores_df['AUC Score'] = auc_scores
 
 print("Model Performance Comparison:\n")
 print(tabulate(scores_df, headers='keys', tablefmt='fancy_grid', showindex=False, floatfmt=".2f"))
+
+# export model accuracy scores into a dataframe
+
+final_scores_df = pd.DataFrame(scores_df)
+
+final_scores_df.to_csv("model_performance_metrics.csv", index=False)
+
