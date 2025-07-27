@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from nltk.parse.earleychart import EARLEY_FEATURE_STRATEGY
 from sklearn.pipeline import make_pipeline
 from sklearn import metrics
 from sklearn.metrics import roc_auc_score, roc_curve
@@ -14,7 +13,7 @@ from sklearn.neural_network import MLPClassifier
 from tabulate import tabulate
 
 # Read data
-raw_data = pd.read_csv('cleaned_vehicle_data.csv')
+raw_data = pd.read_csv('Data/cleaned_vehicle_data.csv')
 
 import pandas as pd
 
@@ -99,7 +98,7 @@ def plot_roc_curves(models_probs, true_y):
     plt.legend(loc='lower right')
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig('ROC_Comparison.png')
+    plt.savefig('Figures/ROC_Comparison.png')
     plt.show()
 
     return auc_scores
@@ -155,7 +154,7 @@ sns.heatmap(confusion_matrix, annot = True, fmt = 'd', xticklabels = model_rf.cl
 plt.xlabel('Predicted Labels')
 plt.ylabel('True Labels')
 plt.title('Confusion Matrix for RF')
-plt.savefig('confusion_matrix.png')
+plt.savefig('Figures/confusion_matrix.png')
 plt.show()
 
 # Extract values
@@ -199,5 +198,5 @@ print(tabulate(scores_df, headers='keys', tablefmt='fancy_grid', showindex=False
 
 final_scores_df = pd.DataFrame(scores_df)
 
-final_scores_df.to_csv("model_performance_metrics.csv", index=False)
+final_scores_df.to_csv("Data/model_performance_metrics.csv", index=False)
 
