@@ -17,7 +17,7 @@ By exploring vehicle population data published by ICBC on Tableau Public, we dev
 <p>Additionally, our analysis helps in resource allocation for claims processing and vehicle servicing, particularly in adapting to the unique repair and operational process/needs of EVs. These findings can also be used to simulate future adoption scenarios, aiding ICBC in strategic forecasting, regulatory planning, and data-driven policy development in the future.</p>
 
 
-## Dependency 
+## Dependencies
 
 OS: Windows (For PowerBI compatibility) 
 
@@ -36,6 +36,27 @@ pip install tabulate
 ## Usage
 
 To see the results of any statistical tests (relevant p-values) and figures generated, run `Data_Analysis.py`. Download and open the `.pbix' file on Power Bi to view the dashboard that showcases our results more clearly. 
+
+## Data Visualizations 
+
+**1.)** *Dataset Description*: 
+
+<img width="1113" height="612" alt="Dataset descriotion" src="https://github.com/user-attachments/assets/5c75ee18-0f6c-4b66-862e-567bb7d93388" />
+
+**2.)** *Dashboard* 
+
+- Users are able to filter by vehicle type
+
+<img width="1120" height="626" alt="Dashboard" src="https://github.com/user-attachments/assets/ae6d11aa-7300-44e7-af04-275e6957a9c7" />
+
+**3.)** *Results*
+
+- Summary of accuracy/AUC score
+- Confusion matrix for classifcation
+- ROC curve comparison based on different supervised classification models tested
+  
+<img width="1122" height="628" alt="Results" src="https://github.com/user-attachments/assets/f2a4ff3a-a0fe-4caa-a2e1-2dc42e1a509b" />
+
 
 ## Contributors
 
